@@ -1,0 +1,93 @@
+<scroll-view class='scroll' scroll-y="true">
+  <view class='counts' bindtap='qm_debt'>
+    <view style='font-size:34rpx;'>客户：{{CGUnitName}}</view>
+    <view class='centers'>
+      <view>
+        <text>日期：{{startDate}}</text>
+      </view>
+      <text class='phones'>仓库：{{storehouseName}}</text>
+    </view>
+    <view>备注：{{memoInfo}}</view>
+  </view>
+
+  <view class='mingxi'>
+    <text>商品明细</text>
+    <text>合计：￥{{totalMoney}}</text>
+    <text>￥{{actualMoney}}</text>
+  </view>
+
+  <view style='margin-bottom:20rpx;'>
+    <view class='counts' wx:for='{{centerlist}}' wx:key='' data-names='{{item.productIDName}}' data-countMs='{{item.countM}}' data-countPs='{{item.countP}}' data-meterLists='{{item.meterList}}' bindtap='details'>
+      <view class='childer1'>{{item.productIDName}}</view>
+      <view class='childer'>
+        <text>{{item.countM}}米</text>
+        <text>{{item.price}}</text>
+        <text>￥{{item.smallMoney}}</text>
+        <text>{{item.countP}}</text>
+      </view>
+      <view class='childer1 childer2'>
+        <text>备注：{{item.memoInfo}}</text>
+      </view>
+    </view>
+
+
+  </view>
+
+
+  <view class='footers'>
+    <view>
+      <text>运费金额：</text>
+      <text style='color:#fea500'>￥{{freightFee}}</text>
+    </view>
+    <view>
+      <text>应收金额：</text>
+      <text style='color:#fea500'>￥{{actualMoney}}</text>
+    </view>
+    <view>
+      <text>其他金额：</text>
+      <text style='color:#fea500'>￥{{cutMoney}}</text>
+    </view>
+    <view>
+      <text>应收余额：</text>
+      <text style='color:#fea500'>￥{{dueMoney}}</text>
+    </view>
+  </view>
+  <view class='footers'>
+    <view>
+      <text>收款方式：</text>
+      <text style='color:#fea500'>{{moneyMode}}</text>
+    </view>
+    <view>
+      <text>本次收款：</text>
+      <text style='color:#fea500'>￥{{receivedMoney}}</text>
+    </view>
+    <view>
+      <text>收款账户：</text>
+      <text style='color:#fea500'>{{accountName}}</text>
+    </view>
+    <view>
+      <text>本单毛利：</text>
+      <text style='color:#fea500'>￥{{profits}}</text>
+    </view>
+  </view>
+  <view class='footers'>
+    <view>
+      <text>业 务 员：</text>
+      <text>{{employeeName}}</text>
+    </view>
+    <view>
+      <text>货运公司：</text>
+      <text>{{freightCompany}}</text>
+    </view>
+    <view>
+      <text>拼包地址：</text>
+      <text>{{PBAddress}}</text>
+    </view>
+    <view>
+      <text>货运单号：{{freightNumber}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+
+<button class='setcodes' open-type="share"><text>发送码单</text></button>

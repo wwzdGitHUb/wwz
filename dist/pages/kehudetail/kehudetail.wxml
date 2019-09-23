@@ -1,0 +1,37 @@
+<view class='wraps'>
+  <view class='wrap'>
+    <text>姓名：{{names}}</text>
+  </view>
+  <view class='wrap wrap2'>
+    <text>省份：{{sheng}}</text>
+    <text>城市：{{crtys}}</text>
+  </view>
+  <view class='wrap wrap2'>
+    <text>地址：{{addre}}</text>
+  </view>
+</view>
+
+<view class='count'>
+  <view>
+    <text>手机：{{pho}}</text>
+    <text>传真：{{chuan}}</text>
+  </view>
+  <view>
+    <text>固话：{{phoness}}</text>
+    <text>固话：{{gu1}}</text>
+
+  </view>
+  <view>
+    <text>固话：{{gu2}}</text>
+    <text>固话：{{gu3}}</text>
+
+  </view>
+  <view>
+    <text>固话：{{gu4}}</text>
+  </view>
+</view>
+
+
+<view class='count'>
+  <view>备注：{{bzend}}</view>
+</view>

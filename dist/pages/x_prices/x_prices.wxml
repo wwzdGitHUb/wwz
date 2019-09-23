@@ -1,0 +1,27 @@
+<view class='seach'>
+  <input bindinput="phonedInput2"  value='{{inputs2}}' placeholder='产品编号'></input>
+  <input bindinput="phonedInput"  value='{{inputs}}' placeholder='客户名称/简称搜索'></input>
+  <text bindtap='seach'>搜索</text>
+</view>
+
+<!-- <view class='moneys'>输入产品编号及大类搜索</view> -->
+<view class='counts'>
+  <text>产品编号</text>
+  <text>客户名称</text>
+  <text>售价</text>
+  <text>销售日期</text>
+</view>
+
+<scroll-view class='swi'  scroll-y="true" lower-threshld='200' bindscrolltolower="searchScrollLower">
+<view class='list' wx:for='{{items}}' wx:key=''>
+  <view>{{item.productIDName}}</view>
+  <view>{{item.CGUnitName }}</view>
+  <view class='colors'>￥{{item.price}}</view>
+  <view>{{item.soldDate}}</view>
+</view>
+</scroll-view>
+
+
+<view class='nones' wx:if='{{noens}}'>
+  <text>暂无数据...</text>
+</view>

@@ -1,0 +1,15 @@
+<view class='wrap'>
+  <image mode='widthFix' src='../images/logo.png'></image>
+  <view class='wrapcodes'>
+    <view class='codes'>
+      <text>机器码：</text>
+      <view>{{codes}}</view >
+      <text class='copy' bindtap='copyTBL'>复制</text>
+    </view>
+  </view>
+  <view bindtap='login' class='sigin'>登录</view>
+
+  <view bindtap='tiyan' class='sigin sigin2'>体验一下</view>
+</view>
+
+<!-- <image class='back' src='../images/back.jpg'></image> -->

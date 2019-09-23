@@ -1,0 +1,29 @@
+/* pages/add/add.wxss */
+page{background: #fff}
+.wrap{display: flex;align-items: center; justify-content: space-between; box-sizing: border-box;padding: 20rpx 20rpx;border-bottom: 1rpx solid #ddd;font-size: 30rpx;color: #000;position: relative;}
+.wrap input{ border: none;background: #fff;width: 525rpx;margin-left: 6rpx;color: #1ea0f7}
+.wrap2{border-top: 15rpx solid #ddd}
+.wrap3{display: flex;justify-content: space-between}
+.wrap3view{ display: flex;justify-content: space-between; align-items: center; border-radius: 10rpx;padding: 0rpx 10rpx;color: #8a8a8a}
+.wrap textarea{display: inline-block; height: 150rpx; width: 545rpx;border:1rpx solid #ddd;border-radius: 10rpx;box-sizing: border-box;padding: 10rpx;}
+.wrap3view .eachwraps view{width: 180rpx;overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;}
+.wrap4{display: block}
+.wrap4 text{ display: inline-block; vertical-align: top}
+.viewwrap{display: block;  overflow-y: auto}
+/* scroll-view{height: 500rpx} */
+.eachwraps{display: flex;align-items: center;justify-content: space-between;height:60rpx; }
+.eachwraps view{ display: inline-block;  margin-right: 6rpx;overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;box-sizing: border-box;padding-left: 330rpx;}
+.downs{display: inline-block;width: 30rpx;height: 30rpx;}
+.wrapsets{position: fixed;bottom: 0rpx;width: 100%;}
+.sets{display: block;bottom: 0rpx; width: 80%; margin:0rpx auto; margin-bottom: 4rpx; padding: 20rpx 0rpx;font-size: 36rpx;color: #fff;background: #1ea0f7;border-radius: 50rpx;text-align: center;}
+.moreall{display: flex;align-items: center; justify-content: center; text-align: center;width: 100%;font-size: 24rpx;color: #ddd;padding: 20rpx 0rpx;}
+.moreall view{padding: 20rpx 20rpx;display: flex;align-items: center;}
+.moreall image{display: inline-block;width: 26rpx;height: 26rpx;}
+.truesrc{transform: rotate(180deg)}
+.wrapview{display: flex;align-items: center;}
+.required{display: inline-block; color: red;font-size: 45rpx;position: absolute;display: flex;align-items: center;}
+.wrapre{margin-left: 25rpx;}

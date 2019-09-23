@@ -1,0 +1,118 @@
+<view class='seach'>
+  <!-- <view>过滤布匹</view> -->
+  <input bindinput="phonedInput" value='{{inputs}}' placeholder='过滤布匹'></input>
+  <text bindtap='seach'>刷新</text>
+</view>
+<!-- <view class='title'>
+  <text data-indxs='0' bindtap='styles' class='{{indexs==0?"sty":""}}'>全部</text>
+  <text data-indxs='1' bindtap='styles' class='{{indexs==1?"sty":""}}'>所在部门</text>
+  <text data-indxs='2' bindtap='styles' class='{{indexs==2?"sty":""}}'>自己</text>
+</view> -->
+
+<view class='titles'>
+  <view class='listview listview2'>
+    <!-- <checkbox-group bindchange="allchage">
+      <label>
+        <checkbox class='checkbox' checked='{{allcheckbox}}' value='1' color='#1ea0f7'></checkbox>
+      </label>
+    </checkbox-group> -->
+     <text>产品编号</text>
+  </view>
+
+  <view>数量</view>
+  <view>客户</view>
+  <!-- <text></text> -->
+</view>
+<!-- <view class='list'>
+  <view>101-01</view>
+  <view>206</view>
+  <view class='zuohua'>
+    <text>zhangsan</text>
+    <image src='../images/zuohua.png'></image>
+  </view>
+</view> -->
+
+
+
+<scroll-view class='scroll-view' scroll-y="true" lower-threshld='200'>
+  <checkbox-group>
+    <i-swipeout style='padding:0px' wx:for='{{lists}}' wx:key='' i-class="i-swipeout-demo-item" operateWidth="{{100}}" unclosable="{{true}}" toggle="{{toggle}}">
+      <view slot="content" class='list'>
+        <view class='listview'>
+          <label data-indes='{{index}}' bindtap="checkboxChange">
+            <checkbox class='checkbox' color='#1ea0f7' value="{{item.name}}" checked="{{item.chaecktruefalse==false?false:true}}"></checkbox>
+            <text>{{item.productIDName}}</text>
+          </label>
+        </view>
+        <view class='{{item.isCut==2?"red":""}}'>{{item.meter}}</view>
+        <view class='zuohua'>
+          <text>{{item.CGUnitName}}</text>
+          <image src='../images/zuohua.png'></image>
+        </view>
+      </view>
+
+      <view slot="button" class="i-swipeout-demo-button-group" style="background:#2db7f5;">
+        <view class="i-swipeout-demo-button" data-names='{{item.productIDName}}' data-goodsid='{{item.id}}' data-num='{{item.meter}}' bindtap='setting'>
+          <image src='../images/shezhi.png'></image>
+          <text>设置</text>
+        </view>
+        <view class="i-swipeout-demo-button" data-names='{{item.productIDName}}' data-goodsid='{{item.id}}' data-num='{{item.meter}}' data-iscut='{{item.isCut}}' bindtap='withdraw'>
+          <image src='../images/chehui.png'></image>
+          <text>撤回</text>
+        </view>
+      </view>
+    </i-swipeout>
+  </checkbox-group>
+</scroll-view>
+
+<view class='layerwrap' wx:if='{{hiddemsg}}'>
+  <view class='layercount'>
+    <view class='titlelayer'>设置客户</view>
+    <view class='titletext titletext2'>型号：{{goodsname}}</view>
+    <view class='titletext titletext2'>数量：{{goodsnum}}</view>
+    <view class='demand demand2'>
+      <text>客户：</text>
+      <input bindinput='khname' value='{{khname}}' type='text' style='margin-right:10rpx;width:200rpx'></input>
+    </view>
+    <view class='buttalert'>
+      <view bindtap='succw'>保存</view>
+      <view bindtap='quxiao'>取消</view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class='layerwrap' wx:if='{{backhiddemsg}}'>
+  <view class='layercount layercount2'>
+    <view class='titlelayer'>整券返仓</view>
+    <view class='titletext titletext2'>型号：{{backhiddemsgxh}}</view>
+    <view class='titletext titletext2'>数量：{{backhiddemsgnum}}</view>
+    <view class='buttalert'>
+      <view bindtap='succbackhiddemsg'>确定返仓</view>
+      <view bindtap='closebackhiddemsg'>取消</view>
+    </view>
+  </view>
+</view>
+
+<view class='layerwrap' wx:if='{{backhiddemsg2}}'>
+  <view class='layercount  layercount3'>
+    <view class='titlelayer'>零剪返仓</view>
+    <view class='titletext titletext2'>型号：{{backhiddemsgxh}}</view>
+    <view class='titletext titletext2'>数量：{{backhiddemsgnum}}</view>
+    <view class='buttalert buttalert2'>
+      <view bindtap='backoldgoods'>返回原来布匹</view>
+        <view bindtap='backoldgoods2'>返回单独成为一批</view>
+      <view bindtap='closehiddemsg2'>取消</view>
+    </view>
+  </view>
+</view>
+
+<view bindtap='codes' class='codes'>
+  <text>生成码单</text>
+</view>
+
+
+<view class='nones' wx:if='{{noens}}'>
+  <text>暂无数据...</text>
+</view>

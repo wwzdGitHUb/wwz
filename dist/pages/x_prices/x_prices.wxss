@@ -1,0 +1,15 @@
+page{background: #fff}
+.counts text{display: inline-block;width:25%;text-align: center;}
+.moneys{display: block;box-sizing: border-box;padding: 20rpx 20rpx;color: #000;font-size: 32rpx;background: #dfdfdf;border-bottom: 1rpx solid #eee;border-top: 106rpx solid #dfdfdf;}
+.moneys text{color: #fea500}
+.list .alent{display: flex;align-items: center;justify-content: space-around;color: #fca506}
+.colors{color: #fca506}
+.counts{font-size: 30rpx;color: #333;box-sizing: border-box;padding: 20rpx 20rpx;display: flex;justify-content: space-between;background: #fff;margin-top: 0rpx;margin-bottom: 1rpx;margin-top: 120rpx;}
+.list{font-size: 28rpx;color: #333;display: flex;justify-content: space-between;padding: 25rpx 20rpx;background: #fff;border-bottom: 1rpx solid #ddd;align-items: center;}
+.list view{display: inline-block;width:25%;text-align: center;}
+/* pages/l_history/l_history.wxss */
+.seach{display: block;box-sizing: border-box;padding: 20rpx 60rpx;display: flex;justify-content: space-around;font-size: 30rpx;color: #fff;background: #1ea0f7;position: fixed;top: 0rpx;left: 0rpx;width: 100%;}
+.seach input{display: inline-block;width: 340rpx;height: 70rpx;color: #333;border-radius: 8rpx;background: #fff;box-sizing: border-box;padding: 2rpx 10rpx;}
+.seach input:nth-child(1){width: 150rpx;}
+.seach text{display: inline-block;width: 120rpx;line-height: 70rpx;background: #fff;color: #42a841;text-align: center;border-radius: 8rpx;}
+.swi{height: 960rpx;}

@@ -1,0 +1,28 @@
+<view class='wrap'>
+  <text>库存详细列表</text>
+  <text>匹数：{{countps}}</text>
+  <text>数量：{{countms}}</text>
+</view>
+<view class='wrap'>
+  <text>{{names}}</text>
+</view>
+
+<view class='biaoge'>
+  <text wx:for='{{meterlists}}' wx:key=''>{{item}}</text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+  <text></text>
+</view>

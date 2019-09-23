@@ -1,0 +1,50 @@
+<view class='wrap'>
+  <view bindtap='kehuziliao'>
+    <image src='../images/kehu.png'></image>
+    <text>客户资料</text>
+  </view>
+  <view bindtap='qiankuan'>
+    <image src='../images/qian.png'></image>
+    <text>欠款查询</text>
+  </view>
+  <view bindtap='lishi'>
+    <image src='../images/lishi.png'></image>
+    <text>销售历史</text>
+  </view>
+  <view bindtap='h_liveness'>
+    <image src='../images/huoyue.png'></image>
+    <text>客户活跃度</text>
+  </view>
+  <view bindtap='k_regier'>
+    <image src='../images/kucun.png'></image>
+    <text>库存查询</text>
+  </view>
+  <view bindtap='J_general'>
+    <image src='../images/jingying.png'></image>
+    <text>经营概况</text>
+  </view>
+  <view bindtap='k_xpaihang'>
+    <image src='../images/xiaoshou.png'></image>
+    <text>客户销售排行</text>
+  </view>
+  <view bindtap='x_model'>
+    <image src='../images/chanpin.png'></image>
+    <text>产品销售排行</text>
+  </view>
+  <view bindtap='y_salesman'>
+    <image src='../images/yewu.png'></image>
+    <text>业务员销售排行</text>
+  </view>
+  <view bindtap='q_area'>
+    <image src='../images/quyu.png'></image>
+    <text>区域销售排行</text>
+  </view>
+  <view bindtap='s_gathering'>
+    <image src='../images/shoukuan.png'></image>
+    <text>收款历史</text>
+  </view>
+  <view bindtap='x_prices'>
+    <image src='../images/jiage.png'></image>
+    <text>销售价格查询</text>
+  </view>
+</view>

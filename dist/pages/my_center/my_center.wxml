@@ -1,0 +1,36 @@
+<view class='headers'>
+  <view class='head'>
+    <image mode='widthFix' src='{{headerimg}}'></image>
+    <text>{{names}}</text>
+  </view>
+</view>
+
+<view class='count'>
+  <view>
+    <text>0</text>
+    <text>欠款金额</text>
+  </view>
+</view>
+
+<view class='list'>
+  <view class='listchilder'>
+    <view>
+      <image mode='widthFix' class='left_img' src='../images/dingdan.png'></image>
+      <text>关于我们</text>
+    </view>
+    <image mode='widthFix' class='right_img' src='../images/right.png'></image>
+  </view>
+</view>
+
+
+<view class='list' bindtap='tuichu'>
+  <view class='listchilder'>
+    <view>
+      <image mode='widthFix' class='left_img' src='../images/dingdan.png'></image>
+      <text>退出登录</text>
+    </view>
+    <image mode='widthFix' class='right_img' src='../images/right.png'></image>
+  </view>
+</view>
+
+ <button wx:if='{{gets}}' style='height:{{heights}}px' open-type="getUserInfo" class='getUserInfos'  bindgetuserinfo="getUserInfo"></button>

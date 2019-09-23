@@ -1,0 +1,84 @@
+{
+  "pages": [
+    "pages/inderight/inderight",
+    "pages/addsales_childer/addsales_childer",
+    "pages/g_index/g_index",
+    "pages/mx_index/mx_index",
+    "pages/l_history/l_history",
+    "pages/codes/codes",
+    "pages/lm_history/lm_history",
+    "pages/addsales_childer_tow/addsales_childer_tow",
+    "pages/addsales_list_tow/addsales_list_tow",
+    "pages/addsales/addsales",
+    "pages/q_debt/q_debt",
+    "pages/kehu/kehu",
+    "pages/addcenter/addcenter",
+    "pages/my_center/my_center",
+    "pages/add/add",
+    "pages/s_gathering/s_gathering",
+    "pages/k_regier/k_regier",
+    "pages/x_model/x_model",
+    "pages/baobiao/baobiao",
+    "pages/J_general/J_general",
+    "pages/x_prices/x_prices",
+    "pages/h_liveness/h_liveness",
+    "pages/k_xpaihang/k_xpaihang",
+    "pages/km_xpaihang/km_xpaihang",
+    "pages/km_regier/km_regier",
+    "pages/hm_liveness/hm_liveness",
+    "pages/qm_debt/qm_debt",
+    "pages/kehudetail/kehudetail",
+    "pages/xm_model/xm_model",
+    "pages/lmm_history/lmm_history"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1ea0f7",
+    "navigationBarTitleText": "管家婆boss版",
+    "navigationBarTextStyle": "white",
+    "resizable": "false",
+    "backgroundTextStyle": "dark",
+    "disableScroll": true
+  },
+  "tabBar": {
+    "color": "#787878",
+    "selectedColor": "#1ea0f7",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "selectedIconPath": "pages/images/shop1.png",
+        "iconPath": "pages/images/shop2.png",
+        "pagePath": "pages/g_index/g_index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "pages/images/baby1.png",
+        "iconPath": "pages/images/baby2.png",
+        "pagePath": "pages/mx_index/mx_index",
+        "text": "明细"
+      },
+      {
+        "selectedIconPath": "pages/images/adds2.png",
+        "iconPath": "pages/images/adds.png",
+        "pagePath": "pages/addcenter/addcenter"
+      },
+      {
+        "selectedIconPath": "pages/images/goods1.png",
+        "iconPath": "pages/images/goods2.png",
+        "pagePath": "pages/baobiao/baobiao",
+        "text": "报表"
+      },
+      {
+        "selectedIconPath": "pages/images/center1.png",
+        "iconPath": "pages/images/center2.png",
+        "pagePath": "pages/my_center/my_center",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "i-swipeout": "../../dist/swipeout/index",
+    "i-icon": "../../dist/icon/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

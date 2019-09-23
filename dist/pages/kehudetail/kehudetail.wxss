@@ -1,0 +1,7 @@
+/* pages/kehudetail/kehudetail.wxss */
+.wraps{display: block;box-sizing: border-box;padding: 30rpx 10rpx;background: #fff}
+
+.wrap{box-sizing: border-box;padding: 10rpx 20rpx;font-size: 34rpx;color: #333;display: flex;justify-content: space-between;background: #fff}
+.wrap2{font-size: 28rpx;}
+.count{display: block;font-size: 28rpx;color: #888;box-sizing: border-box;padding: 30rpx 30rpx;background: #fff;margin: 20rpx 0rpx;}
+.count view text{display: inline-block;width: 50%;padding: 6rpx 0rpx;}

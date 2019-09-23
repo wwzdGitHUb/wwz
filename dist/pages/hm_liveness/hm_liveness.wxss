@@ -1,0 +1,11 @@
+.datas{display: block;text-align: center;padding: 20rpx 20rpx;font-size: 28rpx;color: #333;background: #fff}
+.counts view{font-size: 32rpx;color: #333;display: flex;justify-content: space-between;align-items: center;box-sizing: border-box;padding: 10rpx 20rpx;background: #fff;}
+.counts{ display: block; margin: 5rpx 0rpx;padding: 10rpx 0rpx;background: #fff;}
+.counts view text text{color: #fe0000}
+.footers{font-size: 28rpx;color: #333;margin-top: 20rpx;background: #fff}
+.footers view{display: flex;justify-content: space-between;box-sizing: border-box;padding: 20rpx 20rpx;}
+.footers view:nth-child(1){color: #000;font-size: 30rpx;}
+.footerschilder text{display: inline-block;width: 33.33%;text-align: center;}
+.footerschilder text:nth-child(3){color: #fe0000}
+.footers view:nth-child(1) text{display: inline-block;width: 33.33%;text-align: center;}
+.footerschilder{border-top: 1rpx solid #ddd}

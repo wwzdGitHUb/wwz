@@ -1,0 +1,34 @@
+<view class='seach'>
+  <input bindinput="phonedInput"  value='{{inputs}}' placeholder='请输入名字/手机号搜索'></input>
+  <text bindtap='seach'>搜索</text>
+</view>
+
+<view class='tj'>
+  <image src='../images/qiankuan.png'></image>
+  <view>
+    <text>欠款统计：</text>
+    <text class='colord'>￥{{allq}}</text>
+  </view>
+</view>
+
+
+<view class='swiwrap'>
+<scroll-view class='swi' style='' scroll-y="true" lower-threshld='200' bindscrolltolower="searchScrollLower">
+<view class='counts' wx:for='{{items}}' wx:key=''  data-ids='{{item.id}}' data-names='{{item.CGUnitName}}' data-pho='{{item.mobilePhone}}' data-dueMoneys='{{item.dueMoney}}' bindtap='qm_debt'>
+  <view style='font-size:34rpx;'>姓名：{{item.CGUnitName}}</view>
+  <view class='centers' >
+    <view>
+      <text>欠款：</text>
+      <text class='colord'>￥{{item.dueMoney}}</text>
+    </view>
+    <text class='phones'>手机：{{item.mobilePhone}}</text>
+    <image src='../images/right.png'></image>
+  </view>
+  <view>地址：{{item.address}}</view>
+</view>
+</scroll-view>
+</view>
+
+<view class='nones' wx:if='{{noens}}'>
+  <text>暂无数据...</text>
+</view>

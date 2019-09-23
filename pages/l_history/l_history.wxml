@@ -1,0 +1,67 @@
+<view class='seach'>
+  <input bindinput="phonedInput" value='{{inputs}}' placeholder='请输入名字/手机号搜索'></input>
+  <text bindtap='seach'>搜索</text>
+</view>
+
+<view class='wrap_data'>
+  <view class='data_wrap'>
+    <view>开始：</view>
+    <view>
+      <picker mode="date" value="{{dat1}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange">
+        <view>{{date1}}</view>
+      </picker>
+      <image src='../images/down.png'></image>
+    </view>
+  </view>
+  <view class='data_wrap'>
+    <view>结束：</view>
+    <view>
+      <picker mode="date" value="{{date2}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange2">
+        <view>{{date2}}</view>
+      </picker>
+      <image src='../images/down.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='title'>
+  <text data-indxs='0' bindtap='styles' class='{{indexs==0?"sty":""}}'>今日</text>
+  <text data-indxs='1' bindtap='styles' class='{{indexs==1?"sty":""}}'>昨日</text>
+  <text data-indxs='2' bindtap='styles' class='{{indexs==2?"sty":""}}'>近7天</text>
+  <text data-indxs='3' bindtap='styles' class='{{indexs==3?"sty":""}}'>近30天</text>
+</view>
+
+<view class='counts'>
+  <view>
+    <text>销售笔数:</text>
+    <text>{{allb}}</text>
+  </view>
+    <view>
+    <text>米数:</text>
+    <text>{{totalmeter}}</text>
+  </view>
+  <view>
+    <text>销售额:</text>
+    <text>￥{{totamoney}}</text>
+  </view>
+</view>
+
+<scroll-view class='scro' scroll-y="true" scroll-top="{{scrollTop}}" lower-threshld='200' bindscrolltolower="searchScrollLower">
+  <view class='countss' wx:for='{{items}}' wx:key='' data-billNumbers='{{item.billNumber}}' bindtap='gonavs'>
+    <view style='font-size:34rpx;'>姓名：{{item.CGUnitName}}</view>
+    <view class='centers'>
+      <view>
+        <text>{{item.billNumber}}</text>
+      </view>
+      <text class='phones'>金额：￥{{item.actualMoney}}</text>
+      <image src='../images/right.png'></image>
+    </view>
+    <view>{{item.startDate}}</view>
+  </view>
+</scroll-view>
+
+
+
+<view class='nones' wx:if='{{noens}}'>
+  <text>暂无数据...</text>
+</view>

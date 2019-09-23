@@ -1,0 +1,5 @@
+page{background: #fff}
+.wrap{display: flex;width: 100%;justify-content: space-around;flex-wrap: wrap;}
+.wrap view{display: inline-block;width: 33.333%; padding: 20rpx 10rpx; background: #fff;font-size: 30rpx;color: #333;text-align: center;box-sizing: border-box;border-right: 1rpx solid #eee;border-bottom: 1rpx solid #eee}
+.wrap view image{display: block;width: 80rpx;height: 80rpx;margin: 0 auto}
+.wrap view text{display: inline-block;margin-top: 20rpx;}

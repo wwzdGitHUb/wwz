@@ -1,0 +1,12 @@
+<view class='wrap wrap2'>
+  <text>客户名称</text>
+  <text>销售数量</text>
+</view>
+
+
+<scroll-view scroll-y='true' style="height:92vh" lower-threshld='20' bindscrolltolower="searchScrollLower">
+  <view class='wrap' wx:for='{{lists}}' wx:key=''>
+    <text>{{item.CGUnitName}}</text>
+    <text>{{item.countM}}</text>
+  </view>
+</scroll-view>

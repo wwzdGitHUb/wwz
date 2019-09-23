@@ -1,0 +1,55 @@
+<view class='seach'>
+  <input bindinput="phonedInput" value='{{inputs}}' placeholder='请输入名字/手机号搜索'></input>
+  <text bindtap='seach'>搜索</text>
+  <text bindtap='addper'>新增</text>
+</view>
+
+
+<view class='wrap'>
+  <scroll-view style='height:{{heights}}px' scroll-y="true" lower-threshld='200' bindscrolltolower="searchScrollLower">
+    <!-- item -->
+    <radio-group bindchange="radioChange">
+      <i-swipeout style='padding:0px' i-class="i-swipeout-demo-item" wx:for='{{items}}' wx:key='' operateWidth="{{150}}" unclosable="{{true}}" toggle="{{toggle}}">
+        <view slot="content" style='padding:0px'>
+          <view class='items displa'>
+            <label class="radio" wx:if='{{succ}}'>
+              <radio value="{{item.id}}&{{item.CGUnitName}}" checked="" />
+            </label>
+            <view class='widths' data-names='{{item.CGUnitName}}' data-provinces='{{item.province}}' data-citys='{{item.city}}' data-addre='{{item.address}}' data-pho='{{item.mobilePhone}}' data-ch='{{item.faxNumber}}' data-gu1='{{item.phoneNumber}}' data-guhua1='{{item.otherPhone1}}'
+                  data-guhua2='{{item.otherPhone2}}' data-guhua3='{{item.otherPhone3}}' data-guhua4='{{item.otherPhone4}}' data-beizhu='{{item.memoInfo}}' bindtap='kehudetail'>
+              <view class='wrapview names'>
+                <text>姓名：{{item.CGUnitName}}</text>
+              </view>
+              <view class='wrapview'>
+                <text>省份：{{item.province}}</text>
+                <text>城市：{{item.city}}</text>
+                <image  src='../images/right.png'></image>
+              </view>
+              <view class='wrapview beizhu'>
+                <text>备注：{{item.memoInfo}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view slot="button" class="i-swipeout-demo-button-group" style="background:#2db7f5;">
+          <view class="i-swipeout-demo-button">
+            <image data-pho='{{item.mobilePhone}}' bindtap="copyTBL" src='../images/mse.png'></image>
+          </view>
+          <view class="i-swipeout-demo-button">
+            <image data-mobilePhones='{{item.mobilePhone}}' bindtap='phonecallevent' src='../images/pho.png'></image>
+          </view>
+        </view>
+      </i-swipeout>
+    </radio-group>
+  </scroll-view>
+</view>
+
+
+<view class='nones' wx:if='{{noens}}'>
+  <text>暂无数据...</text>
+</view>
+
+
+<view class='succ' wx:if='{{succ}}' bindtap='getsucc'>
+  <text>确认选择</text>
+</view>

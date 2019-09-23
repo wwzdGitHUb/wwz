@@ -1,0 +1,49 @@
+<view class='seach'>
+  <!-- <view>过滤布匹</view> -->
+  <input bindinput="phonedInput" value='{{inputs}}' placeholder='产品编号/花名'></input>
+  <text bindtap='seach'>搜索</text>
+  <text bindtap='add'>新增</text>
+</view>
+<!-- <view class='title'>
+  <text data-indxs='0' bindtap='styles' class='{{indexs==0?"sty":""}}'>全部</text>
+  <text data-indxs='1' bindtap='styles' class='{{indexs==1?"sty":""}}'>所在部门</text>
+  <text data-indxs='2' bindtap='styles' class='{{indexs==2?"sty":""}}'>自己</text>
+</view> -->
+
+<view class='titles'>
+  <view class='listview listview2'>
+      <text>产品编号</text>
+  </view>
+  <view>花名</view>
+  <view>参售价格</view>
+</view>
+
+
+
+
+<scroll-view class='scroll-view' scroll-y="true" scroll-top="{{scrollTop}}" lower-threshld='200' bindscrolltolower="searchScrollLower">
+  <checkbox-group>
+      <view slot="content" class='list'  wx:for='{{lists}}' wx:key=''>
+        <view class='listview'>
+          <label data-indes='{{index}}' bindtap="checkboxChange">
+            <checkbox class='checkbox' color='#1ea0f7' value="{{item.name}}" checked="{{item.chaecktruefalse==false?false:true}}"></checkbox>
+            <text>{{item.productIDName}}</text>
+          </label>
+        </view>
+        <view class='{{item.isCut==2?"red":""}}'>{{item.productIDNameHM}}</view>
+        <view class='zuohua'>
+          <text>￥{{item.priceNoTax}}</text>
+        </view>
+      </view>
+  </checkbox-group>
+</scroll-view>
+
+
+<view bindtap='codes' class='codes'>
+  <text>选好了</text>
+</view>
+
+
+<view class='nones' wx:if='{{noens}}'>
+  <text>暂无数据...</text>
+</view>

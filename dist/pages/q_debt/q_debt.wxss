@@ -1,0 +1,16 @@
+page{background: #fff}
+.seach{display: block;box-sizing: border-box;padding: 20rpx 60rpx;display: flex;justify-content: space-around;font-size: 30rpx;color: #fff;background: #1ea0f7;position: fixed;top: 0rpx;left: 0rpx;width: 100%;}
+.seach input{display: inline-block;width: 500rpx;height: 70rpx;color: #333;border-radius: 8rpx;background: #fff;box-sizing: border-box;padding: 2rpx 10rpx;}
+.seach text{display: inline-block;width: 120rpx;line-height: 70rpx;background: #fff;color: #42a841;text-align: center;border-radius: 8rpx;}
+
+
+.tj{display: block;box-sizing: border-box;padding: 30rpx 20rpx;font-size: 28rpx;color: #333;display: flex;width: 100%;align-items: center;padding-top: 140rpx;background: #fff;border-bottom: 1rpx solid #ddd;}
+.tj image{display: inline-block;width: 38rpx;height: 38rpx;margin-right: 10rpx;}
+.colord{color: #1ea0f7}
+.counts{box-sizing: border-box;padding: 20rpx 20rpx;font-size: 28rpx;color: #333;border-bottom: 1rpx solid #ddd;background: #fff}
+.centers{display: flex;justify-content: space-between;padding: 18rpx 0rpx;}
+.centers image{width: 38rpx;height: 38rpx;}
+.phones{display: inline-block;width: 320rpx;}
+/* .swiwrap{display: block;height: 100%;} */
+.swi{height: 970rpx}
+.nones{display: block;text-align: center;font-size: 26rpx;color: #666;position: absolute; width: 100%;text-align: center; top: 300rpx;}

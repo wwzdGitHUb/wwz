@@ -1,0 +1,79 @@
+<view class='seach'>
+  <input bindinput="phonedInput" value='{{inputs}}' placeholder='请输入名字/手机号搜索' placeholder='请输入名字/手机号搜索'></input>
+  <text bindtap='seach'>搜索</text>
+</view>
+
+<view class='wrap_data'>
+  <view class='data_wrap'>
+    <view>开始：</view>
+    <view>
+      <picker mode="date" value="{{dat1}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange">
+        <view>{{date1}}</view>
+      </picker>
+      <image src='../images/down.png'></image>
+    </view>
+  </view>
+  <view class='data_wrap'>
+    <view>结束：</view>
+    <view>
+      <picker mode="date" value="{{date2}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange2">
+        <view>{{date2}}</view>
+      </picker>
+      <image src='../images/down.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='hosj'>
+  <view>
+    <picker style='width:100%' value="" bindchange='changes' range="{{category}}">
+      <view class='files'>
+        <text>销售贡献度</text>
+        <image class='down' src='../images/down.png'></image>
+        <text class='valus'>{{category[styles]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view>
+    <picker style='width:100%' value="" bindchange='changestown' range="{{categorytow}}">
+      <view class='files'>
+        <text>未交易时间</text>
+        <image class='down' src='../images/down.png'></image>
+        <text class='valus' style='color:#1ea0f7'>{{categorytow[stylestow]}}</text>
+      </view>
+    </picker>
+  </view>
+</view>
+
+<view class='title'>
+  <text data-indxs='0' bindtap='styles' class='{{indexs==0?"sty":""}}'>近30日</text>
+  <text data-indxs='1' bindtap='styles' class='{{indexs==1?"sty":""}}'>近3个月</text>
+  <text data-indxs='2' bindtap='styles' class='{{indexs==2?"sty":""}}'>近半年</text>
+  <text data-indxs='3' bindtap='styles' class='{{indexs==3?"sty":""}}'>近一年</text>
+</view>
+
+<view class='counts'>
+  <text>客户名称</text>
+  <text>销售贡献度</text>
+  <text>未交易时间</text>
+  <text>手机号码</text>
+</view>
+
+
+<scroll-view class='swi' scroll-y="true" scroll-top="{{scrollTop}}" lower-threshld='200' bindscrolltolower="searchScrollLower">
+<view class='list' wx:for='{{items}}' data-lastDate='{{item.lastDate}}' data-CGUnitName='{{item.CGUnitName}}' data-mobilePhone='{{item.mobilePhone}}' data-address='{{item.address}}' data-countNum='{{item.countNum}}' data-avgMoney='{{item.avgMoney}}' data-sumMoney='{{item.sumMoney}}' data-noSellDays='{{item.noSellDays}}' data-id='{{item.id}}' wx:key='' bindtap='hm_liven'>
+  <view>{{item.CGUnitName}}</view>
+  <view>
+    <image wx:key='' wx:for='{{item.XSGXDs}}' src='../images/xing.png'></image>
+  </view>
+  <view>
+    <image  wx:key='' wx:for='{{item.nolDays}}' src='../images/xing2.png'></image>
+  </view>
+  <view style="color:#1ea0f7" data-call='{{item.mobilePhone}}' catchtap="call">{{item.mobilePhone}}</view>
+</view>
+</scroll-view>
+
+
+<view class='nones' wx:if='{{noens}}'>
+  <text>暂无数据...</text>
+</view>

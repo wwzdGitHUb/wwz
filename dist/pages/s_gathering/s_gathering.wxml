@@ -1,0 +1,58 @@
+<view class='seach'>
+  <input bindinput="phonedInput" value='{{inputs}}' placeholder='请输入名字搜索'></input>
+  <text bindtap='seach'>搜索</text>
+</view>
+
+<view class='wrap_data'>
+  <view class='data_wrap'>
+    <view>开始：</view>
+    <view>
+      <picker mode="date" value="{{dat1}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange">
+        <view>{{date1}}</view>
+      </picker>
+      <image src='../images/down.png'></image>
+    </view>
+  </view>
+  <view class='data_wrap'>
+    <view>结束：</view>
+    <view>
+      <picker mode="date" value="{{date2}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange2">
+        <view>{{date2}}</view>
+      </picker>
+      <image src='../images/down.png'></image>
+    </view>
+  </view>
+</view>
+
+
+<view class='title'>
+  <text data-indxs='0' bindtap='styles' class='{{indexs==0?"sty":""}}'>今日</text>
+  <text data-indxs='1' bindtap='styles' class='{{indexs==1?"sty":""}}'>昨日</text>
+  <text data-indxs='2' bindtap='styles' class='{{indexs==2?"sty":""}}'>近七天</text>
+  <text data-indxs='3' bindtap='styles' class='{{indexs==3?"sty":""}}'>近30天</text>
+</view>
+
+<view class='moneys'>销售金额：
+  <text>￥{{totalReceivedMoney}}</text>
+</view>
+
+<view class='counts'>
+  <text>日期</text>
+  <text>客户名称</text>
+  <text>收款金额</text>
+  <text>收款账户</text>
+  <text>优惠金额</text>
+</view>
+<scroll-view class='scro' scroll-y="true" scroll-top="{{scrollTop}}" lower-threshld='20' bindscrolltolower="searchScrollLower">
+  <view class='list' wx:for='{{items}}' wx:key=''>
+    <view>{{item.startDate}}</view>
+    <view>{{item.CGUnitName}}</view>
+    <view class='colors'>￥{{item.totalMoney}}</view>
+    <view>{{item.accountName}}</view>
+    <view class='colors'>￥{{item.cutMoney}}</view>
+  </view>
+</scroll-view>
+
+<view class='nones' wx:if='{{noens}}'>
+  <text>暂无数据...</text>
+</view>

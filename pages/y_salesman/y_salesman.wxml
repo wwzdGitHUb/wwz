@@ -1,0 +1,50 @@
+<view class='seach'>
+  <input placeholder='请输入名字/手机号搜索'></input>
+  <text>搜索</text>
+</view>
+
+<view class='wrap_data'>
+  <view class='data_wrap'>
+    <view>开始：</view>
+    <view>
+      <picker mode="date" value="{{dat1}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange">
+        <view>{{date1}}</view>
+      </picker>
+      <image src='../images/down.png'></image>
+    </view>
+  </view>
+  <view class='data_wrap'>
+    <view>结束：</view>
+    <view>
+      <picker mode="date" value="{{date2}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange2">
+        <view>{{date2}}</view>
+      </picker>
+      <image src='../images/down.png'></image>
+    </view>
+  </view>
+</view>
+
+
+
+<view class='title'>
+  <text data-indxs='0' bindtap='styles' class='{{indexs==0?"sty":""}}'>今日</text>
+  <text data-indxs='1' bindtap='styles' class='{{indexs==1?"sty":""}}'>昨日</text>
+  <text data-indxs='2' bindtap='styles' class='{{indexs==2?"sty":""}}'>近七天</text>
+  <text data-indxs='3' bindtap='styles' class='{{indexs==3?"sty":""}}'>今30天</text>
+</view>
+
+<view class='moneys'>销售金额：
+  <text>￥5656</text>
+</view>
+
+
+<view class='counts'>
+  <text>业务员名称</text>
+  <text>销售金额</text>
+</view>
+<view class='list'>
+  <view>张三</view>
+  <view class='alent'>
+    <text>￥565656</text>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+/* pages/addsales/addsales.wxss */
+page{background: #fff}
+/* pages/l_history/l_history.wxss */
+page{background: #fff}
+.seach{display: block;box-sizing: border-box;padding: 20rpx 40rpx;display: flex;justify-content: space-around;font-size: 30rpx;color: #fff;background: #1ea0f7;position: fixed;top: 0rpx;left: 0rpx;width: 100%;align-items: center;}
+.seach input{display: inline-block;width:418rpx;height: 70rpx;color: #333;border-radius: 8rpx;background: #fff;box-sizing: border-box;padding: 2rpx 10rpx;}
+.seach text{display: inline-block;width: 120rpx;line-height: 70rpx;background: #fff;color: #42a841;text-align: center;border-radius: 8rpx;}
+.title{display: block;display: flex;justify-content: space-around;font-size: 30rpx;color: #333;background: #fff;padding: 0rpx 0rpx;border-bottom: 1rpx solid #ddd;margin-top: 120rpx;}
+.title text{display: inline-block;width: 25%;text-align: center;box-sizing: border-box;padding: 25rpx 0rpx;}
+.title .sty{border-bottom: 5rpx solid #1ea0f7;color: #1ea0f7}
+.titles{display: flex;box-sizing: border-box;padding: 20rpx 20rpx;justify-content: space-between;font-size: 30rpx;color: #333;border-bottom: 1rpx solid #ddd;margin-top: 120rpx;}
+.titles view{display: inline-block; display: flex;align-items: center; width: 33.3%;text-align: center;justify-content: center}
+.list{display: flex;box-sizing: border-box;padding: 30rpx 20rpx;justify-content: space-between;font-size: 30rpx;color: #333;border-bottom: 1rpx solid #ddd}
+.list view{display: inline-block;width: 33.3%;text-align: center;}
+.zuohua image{display: inline-block;width: 32rpx;height: 32rpx;}
+.list .zuohua{display: flex;align-items: center;justify-content:space-around}
+.i-swipeout-demo-button{width: 50%;text-align: center;}
+.i-swipeout-demo-button image{display: block;width: 32rpx;height: 32rpx;margin: 0 auto;margin-bottom: 3rpx;}
+.i-swipeout-demo-button text{display: block;font-size: 26rpx;color: #fff;text-align: center;}
+.i-swipeout-demo-button-group{display: flex;justify-content: space-around;height: 100%;align-items: center;}
+
+.layerwrap{display: block;width: 100%;height: 100%;background: rgba(0,0,0,0.6);position: absolute;top: 0rpx;left: 0rpx;z-index: 999}
+.layercount{display: block;width: 68%;min-height:377rpx;margin: 0 auto;position: relative;top: 25%;background: #fff;border-radius: 10rpx;color: #101010;font-size: 32rpx;box-sizing: border-box;padding: 0rpx 30rpx}
+.titlelayer{text-align: center;box-sizing: border-box;padding: 20rpx 0rpx;}
+.demand2{display: flex;align-items: center;}
+.demand2 input{position: relative;top: 0rpx;border-bottom: 1rpx solid #ddd}
+.titletext2,.demand2{padding: 10rpx 0rpx}
+.jian{color: #e51c23;box-sizing: border-box;padding: 5rpx 10rpx;border:1rpx solid #ddd;border-radius: 10rpx;display: flex; align-items: center; font-size: 32rpx;}
+.buttalert{display: flex;justify-content: space-between;font-size: 32rpx;color: #fff;margin:20rpx 0rpx;padding-bottom: 0rpx}
+.buttalert view{display: inline-block;width: 37%;box-sizing: border-box;padding: 10rpx 0rpx;text-align: center;background: #259b24;border-radius: 10rpx}
+.exa_right .views_view{font-size: 24rpx;}
+.xuanz{transform: rotate(180deg)}
+.codes{position: fixed;bottom: 0rpx;box-sizing: border-box; width: 100%; padding: 5rpx 0rpx;text-align: center;font-size: 28rpx;color: #333}
+.codes text{display: inline-block;width: 80%;padding: 20rpx 0rpx;border-radius: 50rpx;background: #1ea0f7;color: #fff}
+.checkbox{transform: scale(0.7);position: relative;top: -1rpx}
+.listview label{ width: 100%; display: flex;justify-content: space-between;align-items: center;}
+.listview label text{display: inline-block;width: 90%;}
+.titles .listview2{display: inline-block}
+.scroll-view{height: 74vh;}
+.nones{display: block;text-align: center;font-size: 26rpx;color: #666;position: absolute; width: 100%;text-align: center; top: 560rpx;}
+.red,.zuohua{color: #e51c23}
+.layercount2{min-height: 323rpx;}
+.buttalert2{display: block;}
+.buttalert2 view{display: block;width: 100%;margin: 30rpx 0px}
+.layercount3{min-height: 500rpx;}
+.scroll-view{height: 74vh}

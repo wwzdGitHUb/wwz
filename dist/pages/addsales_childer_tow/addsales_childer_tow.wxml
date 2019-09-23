@@ -1,0 +1,181 @@
+<scroll-view class='heights' scroll-y="true">
+  <view>
+    <view class='wraplist'>
+      <view class='wraplistlist wraplistlist2'>
+        <image src='../images/riqi.png'></image>
+        <text> 日期</text>
+      </view>
+      <view class='wraplistlist'>
+        <picker class='wraplistlistdata' mode="date" value="{{dat1}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange">
+          <view>{{date1}}</view>
+        </picker>
+        <image src='../images/right.png'></image>
+      </view>
+    </view>
+
+    <view class='wraplist' bindtap='clients'>
+      <view class='wraplistlist wraplistlist2'>
+        <image src='../images/kehu2.png'></image>
+        <text> 客户</text>
+      </view>
+      <view class='wraplistlist'>
+        <text>{{namekh}}</text>
+        <image src='../images/right.png'></image>
+      </view>
+    </view>
+
+    <view class='wraplist'>
+      <view class='wraplistlist wraplistlist2'>
+        <image src='../images/cangku.png'></image>
+        <text> 仓库</text>
+      </view>
+      <view class='wraplistlist'>
+        <picker class='wraplistlistdata' range="{{category}}" bindchange='changes'>
+          <view>{{ckgoodsval}}</view>
+        </picker>
+        <image src='../images/right.png'></image>
+      </view>
+    </view>
+
+    <view class='wraplist wraplist2'>
+      <text>
+      <text>累计：</text>
+      <text class='allji'>匹数：{{p_num}}</text>
+      <text class='allji'>数量：{{s_num}}</text>
+      <text class='allji'>金额：{{j_price}}</text>
+      </text>
+    </view>
+  </view>
+
+  <view class='counts' wx:for='{{codeslist}}' data-indexs='{{index}}' data-countms='{{item.countM}}' data-names='{{item.productIDName}}' catchtap='shezhi' wx:key=''>
+    <view>
+      <view>456-jkj</view>
+      <view class='counts_view counts_view2'>
+        <text>单价：{{item.price}}</text>
+        <text>数量：{{item.countM}}</text>
+      </view>
+      <view class='counts_view'>
+        <text>备注：{{item.memoInfo}}</text>
+        <text>金额：{{item.smallMoney}}</text>
+      </view>
+    </view>
+    <view class='clo' data-indexs='{{index}}' catchtap='removetowlist'>
+      <image src='../images/clo.png' />
+    </view>
+  </view>
+  <view class='addtow' catchtap='add'>
+    <image src='../images/addtow.png' />
+  </view>
+  <view class='wraplist wraplist2 wraplistinput'>
+    <text space="emsp">备  注</text>
+    <input bindinput='morebz' value='{{morebz}}'></input>
+  </view>
+  <view class='wraplist wraplistinput'>
+    <text>拼包地址</text>
+    <input bindinput='pbaddress' value='{{pbaddress}}'></input>
+  </view>
+  <view class='wraplist'>
+    <text space="emsp">业务员</text>
+    <view class='wraplistlist'>
+      <picker class='wraplistlistdata' range="{{yewu}}" bindchange='yewuchanges'>
+        <view>{{yewuskmoneyval}}</view>
+      </picker>
+      <image src='../images/right.png'></image>
+    </view>
+  </view>
+  <view class='wraplist wraplistinput wraplistinput'>
+    <text space="emsp">运费：</text>
+    <input bindinput='yfclick' value='{{yfclick}}' type='digit'></input>
+  </view>
+  <view class='wraplist wraplistinput'>
+    <text>其他金额：</text>
+    <input bindinput='qtmoney' value='{{qtmoney}}'></input>
+  </view>
+  <view class='wraplist wraplistinput'>
+    <text>应收金额：</text>
+    <text>{{ysmoneys}}</text>
+  </view>
+  <view class='wraplist wraplistinput'>
+    <text>应收余额：</text>
+    <text>{{ysymoney}}</text>
+  </view>
+  <view class='wraplist wraplist2'>
+    <text>收款方式</text>
+    <view class='wraplistlist'>
+      <picker class='wraplistlistdata' range="{{waymoney}}" bindchange='waymoney'>
+        <view>{{waymoneyval}}</view>
+      </picker>
+      <image src='../images/right.png'></image>
+    </view>
+  </view>
+  <view class='wraplist'>
+    <text>收款账户</text>
+    <view class='wraplistlist'>
+      <picker class='wraplistlistdata' range="{{skmoney}}" bindchange='skmoneychage'>
+        <view>{{skmoneyval}}</view>
+      </picker>
+      <image src='../images/right.png'></image>
+    </view>
+  </view>
+  <view class='wraplist wraplistinput'>
+    <text>本次收款：</text>
+    <input bindinput='bcmoney' value='{{bcmoney}}' type='digit'></input>
+  </view>
+  <view class='wraplist wraplistinput'>
+    <text>发送打印</text>
+    <input bindinput='fsdy' value='{{fsdy}}'></input>
+  </view>
+</scroll-view>
+<view class='success'>
+  <text>本单总计：<text>￥{{ysmoneys}}</text></text>
+  <view bindtap='confirmbutt' class='{{biaoshi==1?"blacks":""}} {{ysmoneys==0?"blacks":""}}'>确定提交</view>
+</view>
+
+
+<view class='layerwrap' wx:if='{{hiddemsg}}'>
+  <view class='layercount'>
+    <view class='titlelayer'>1234-hj</view>
+    <view class='demand demand2' bindtap='layertow'>
+      <text>数量：</text>
+      <text class='alis'>{{allnums}}</text>
+    </view>
+    <view class='demand demand2'>
+      <text>单价：</text>
+      <input bindinput='pricenum' value='{{pricenum}}' type='digit' style='margin-right:10rpx;width:310rpx'></input>
+    </view>
+    <view class='demand demand2'>
+      <text>金额：</text>
+      <text>{{allmonesa}}</text>
+    </view>
+    <view class='demand demand2'>
+      <text>备注：</text>
+      <input bindinput='bzgoods' type='text' style='margin-right:10rpx;width:310rpx'></input>
+    </view>
+    <view class='buttalert'>
+      <view bindtap='succwone'>保存</view>
+      <view bindtap='quxiao'>取消</view>
+    </view>
+  </view>
+</view>
+
+
+<view class='layerwraptow' wx:if='{{hiddemsgtow}}'>
+  <view class='layercount layercounttow'>
+    <view class='titlelayer'>1234-hj</view>
+    <view class='demand demand2 demand3'>
+      <text>数量：</text>
+      <input type='digit' bindinput='numtow' value='{{numtow}}' style='width:200rpx;'>456</input>
+      <text class='butadd' bindtap='addtownum'>添加</text>
+    </view>
+    <view class='tab'>
+      <view wx:for='{{numtowlist}}' wx:key='' data-indes='{{index}}' bindtap='closetowlist'>
+        <text>{{item}}</text>
+        <image src='../images/clo.png'></image>
+      </view>
+    </view>
+    <view class='buttalert'>
+      <view bindtap='succtowlist'>确定</view>
+      <view bindtap='quxiaotow'>取消</view>
+    </view>
+  </view>
+</view>

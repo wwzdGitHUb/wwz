@@ -1,0 +1,302 @@
+<view class='wrap'>
+  <view class='left' style='height:{{heights}}px'>
+    <view data-navs='0' bindtap='navclick'>
+      <text>销\n售\n排\n行</text>
+      <text class='{{leftnav==0?"sty":"nonessty"}}'></text>
+    </view>
+    <view data-navs='1' bindtap='navclick'>
+      <text>客\n户\n活\n跃\n度</text>
+      <text class='{{leftnav==1?"sty sty2":"nonessty"}}'></text>
+    </view>
+    <view data-navs='2' bindtap='navclick'>
+      <text>经\n营\n概\n况</text>
+      <text class='{{leftnav==2?"sty sty3":"nonessty"}}'></text>
+    </view>
+  </view>
+
+  <view style='height:{{heights-20}}px' class='right'>
+    <!-- 销售排行 -->
+    <view wx:if='{{xiaoshou}}'>
+      <view class='wrap_data'>
+        <view class='data_wrap'>
+          <view></view>
+          <view>
+            <picker mode="date" value="{{dat1}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange">
+              <view>{{date1}}</view>
+            </picker>
+            <image src='../images/down.png'></image>
+          </view>
+        </view>
+        <view class='cen'>到</view>
+        <view class='data_wrap'>
+          <view></view>
+          <view>
+            <picker mode="date" value="{{date2}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange2">
+              <view>{{date2}}</view>
+            </picker>
+            <image src='../images/down.png'></image>
+          </view>
+        </view>
+      </view>
+
+      <view class='title'>
+        <text data-indxs='0' bindtap='styles' class='{{indexs==0?"stys":""}}'>客户</text>
+        <text data-indxs='1' bindtap='styles' class='{{indexs==1?"stys":""}}'>产品</text>
+        <text data-indxs='2' bindtap='styles' class='{{indexs==2?"stys":""}}'>业务员</text>
+        <text data-indxs='3' bindtap='styles' class='{{indexs==3?"stys":""}}'>区域</text>
+      </view>
+
+      <view class='seach' wx:if='{{seachinput}}'>
+        <picker class='section' range="{{section}}" bindchange='getsection'>
+          <view>{{values}}</view>
+          <image class='downs' src='../images/down.png'></image>
+        </picker>
+        <input bindinput="phonedInput" value='{{inputs}}' placeholder='{{input_place}}'></input>
+        <text bindtap='seach'>搜索</text>
+      </view>
+
+      <view class='heji' wx:if='{{alltotamoney}}'>
+        <text>销售金额：￥{{totamoney}}</text>
+      </view>
+      <view class='eachwrap' wx:if='{{eachwrap}}'>
+        <view>
+          <picker class='eachwraps' range="{{eachwraps}}" bindchange='eachwraps'>
+            <view>{{eachwrapsval==''?"省份":eachwrapsval}}</view>
+          </picker>
+          <image class='downs' src='../images/down.png'></image>
+        </view>
+        <view>
+          <picker class='eachwraps' range="{{busection}}" bindchange='busectionclick'>
+            <view>{{busectionval}}</view>
+          </picker>
+          <image class='downs' src='../images/down.png'></image>
+        </view>
+        <view bindtap='seacheach'>搜索</view>
+      </view>
+
+      <view class='scrowrap'>
+        <view class='kname {{leftnav==1?"kname1":leftnav==2?"kname2":""}}'>
+          <text>{{kehuname}}</text>
+          <text>{{xiaosh}}</text>
+        </view>
+        <scroll-view class='scro {{itemsistrue3==true?"itemsistrue3":""}} {{itemsistrue4==true?"itemsistrue4":""}}' scroll-y="true" scroll-top="{{scrollTop}}" lower-threshld='100' bindscrolltolower="searchScrollLower">
+          <view class='countss' wx:if='{{itemsistrue1}}' wx:for='{{items}}' data-ids='{{item.id}}' bindtap='km_xpaihang' wx:key=''>
+            <view class='centers'>
+              <text style='font-size:28rpx;'>{{item.CGUnitName}}</text>
+              <view class='phones'>
+                <text>￥{{item.totalSellMoney}}</text>
+                <image src='../images/right.png'></image>
+              </view>
+            </view>
+          </view>
+
+          <view class='countss' wx:if='{{itemsistrue2}}' data-ids='{{item.id}}' bindtap='xm_model' wx:for='{{items2}}' wx:key=''>
+            <view class='centers'>
+              <text style='font-size:28rpx;'>{{item.productIDName}}</text>
+              <view class='phones'>
+                <text>￥{{item.countM}}</text>
+                <image src='../images/right.png'></image>
+              </view>
+            </view>
+          </view>
+
+
+          <view class='countss' wx:if='{{itemsistrue3}}' wx:for='{{items3}}' wx:key=''>
+            <view class='centers'>
+              <text style='font-size:28rpx;'>{{item.employeeName}}</text>
+              <view class='phones'>
+                <text>￥{{item.actualMoney}}</text>
+              </view>
+            </view>
+          </view>
+
+          <view class='countss' wx:if='{{itemsistrue4}}' wx:for='{{items4}}' wx:key=''>
+            <view class='centers'>
+              <text style='font-size:28rpx;'>{{item.provinceCity}}</text>
+              <view class='phones'>
+                <text>￥{{item.actualMoney}}</text>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+        <view class='nones' wx:if='{{noens}}'>
+          <text>暂无数据...</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 客户活跃度 -->
+    <view wx:if='{{kehu}}'>
+      <view class='wrap_data'>
+        <view class='data_wrap'>
+          <view></view>
+          <view>
+            <picker mode="date" value="{{dat1}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange">
+              <view>{{date1}}</view>
+            </picker>
+            <image src='../images/down.png'></image>
+          </view>
+        </view>
+        <view class='cen'>到</view>
+        <view class='data_wrap'>
+          <view></view>
+          <view>
+            <picker mode="date" value="{{date2}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange2">
+              <view>{{date2}}</view>
+            </picker>
+            <image src='../images/down.png'></image>
+          </view>
+        </view>
+      </view>
+
+      <view class='title'>
+        <text data-stylestime='0' bindtap='stylestime' class='{{stylestime==0?"stykehu":""}}'>近30日</text>
+        <text data-stylestime='1' bindtap='stylestime' class='{{stylestime==1?"stykehu":""}}'>近3个月</text>
+        <text data-stylestime='2' bindtap='stylestime' class='{{stylestime==2?"stykehu":""}}'>近半年</text>
+        <text data-stylestime='3' bindtap='stylestime' class='{{stylestime==3?"stykehu":""}}'>近一年</text>
+      </view>
+      <view class='hosj'>
+        <view>
+          <picker style='width:100%' value="" bindchange='changes' range="{{category}}">
+            <view class='files'>
+              <text>销售贡献度</text>
+              <image class='down' src='../images/down.png'></image>
+              <text class='valus'>{{category[styles]}}</text>
+            </view>
+          </picker>
+        </view>
+        <view>
+          <picker style='width:100%' value="" bindchange='changestown' range="{{categorytow}}">
+            <view class='files'>
+              <text>未交易时间</text>
+              <image class='down' src='../images/down.png'></image>
+              <text class='valus' style='color:#1ea0f7'>{{categorytow[stylestow]}}</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='seach seach2'>
+        <input bindinput="kehuphonedInput" value='{{kehuseach}}' placeholder='请输入姓名手机号搜索'></input>
+        <text bindtap='kehuseachs'>搜索</text>
+      </view>
+
+      <view class='scrowrap'>
+        <view class='counts'>
+          <text>客户名称</text>
+          <text>销售贡献度</text>
+          <text>未交易时间</text>
+          <text>手机号码</text>
+        </view>
+        <scroll-view class='scro scro2' scroll-y="true" scroll-top="{{scrollTop}}" lower-threshld='100' bindscrolltolower="kehusearchScrollLower">
+          <view class='list' wx:for='{{items1}}' data-lastDate='{{item.lastDate}}' data-CGUnitName='{{item.CGUnitName}}' data-mobilePhone='{{item.mobilePhone}}' data-address='{{item.address}}' data-countNum='{{item.countNum}}' data-avgMoney='{{item.avgMoney}}'
+            data-sumMoney='{{item.sumMoney}}' data-noSellDays='{{item.noSellDays}}' data-id='{{item.id}}' wx:key='' bindtap='hm_liven'>
+            <view>{{item.CGUnitName}}</view>
+            <view>
+              <image wx:key='' wx:for='{{item.XSGXDs}}' src='../images/xing.png'></image>
+            </view>
+            <view>
+              <image wx:key='' wx:for='{{item.nolDays}}' src='../images/xing2.png'></image>
+            </view>
+            <view>{{item.mobilePhone}}</view>
+          </view>
+
+        </scroll-view>
+        <view class='nones' wx:if='{{noens}}'>
+          <text>暂无数据...</text>
+        </view>
+      </view>
+    </view>
+
+
+    <!-- 经营概况 -->
+    <view wx:if='{{jingying}}'>
+      <view class='wraps' catchtap='q_debt'>
+        <view>
+          <image src='../images/gaikuang.png'></image>
+          <text>资金概况-应收客户欠款：<text >￥{{allcategory}}</text></text>
+        </view>
+        <image src='../images/right.png'></image>
+      </view>
+
+
+      <view class='wraps wraps3' bindtap='k_regier' style='margin:0;'>
+        <view>
+          <image src='../images/ku.png'></image>
+          <text>库存成本：<text>￥{{totalMoney}}</text></text>
+        </view>
+        <image src='../images/right.png'></image>
+      </view>
+
+      <view class='wraps wraps2'>
+        <view bindtap='k_regier'>
+          <text>库存总数:<text>￥{{totalCountM}}</text></text>
+        </view>
+        <view bindtap='k_regier'>
+          <text>库存警报数:<text>￥{{alertCount}}</text></text>
+        </view>
+      </view>
+
+      <view class='wraps wraps2'>
+        <view bindtap='l_history'>
+          <image src='../images/x.png'></image>
+          <view class='yangsty'>
+            <text>今日销售:</text>
+            <text>￥{{gaitotalMoneys}}</text>
+          </view>
+
+        </view>
+        <view bindtap='l_history'>
+          <image src='../images/z.png'></image>
+          <view class='yangsty'>
+            <text>昨日销售: </text>
+            <text>￥{{yestotalMoneys}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class='wraps wraps4'>
+        <view bindtap='l_history'>
+          <text class='fsda'>近7天销售:<text>￥{{qitianotalMoneys}}</text></text>
+          <view class='wafs' style='width:100%;font-size:26rpx;color:#666'>
+            <image src='{{qitongqilMoneys>qitianotalMoneys?"../images/xia.png":"../images/t.png"}}'></image>
+            <view>
+              <text>同期:</text>
+              <text class='{{qitongqilMoneys>qitianotalMoneys?"bigtongqi":"smalltong"}}'>￥{{qitongqilMoneys}}</text>
+            </view>
+          </view>
+        </view>
+        <text class='sold'></text>
+        <view bindtap='l_history'>
+          <text class='fsda'>近30天销售:<text>￥{{threeotalMoneys}}</text></text>
+          <view  class='wafs' style='width:100%;font-size:26rpx;color:#666'>
+            <image src='{{qitongthreelMoneys>threeotalMoneys?"../images/xia.png":"../images/t.png"}}'></image>
+            <view>
+              <text>同期:</text>
+              <text class='{{qitongthreelMoneys>threeotalMoneys?"bigtongqi":"smalltong"}}'>￥{{qitongthreelMoneys}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='title'>
+        <text data-stylesjing='0' bindtap='stylesjing' class='{{stylesjing==0?"styjing":""}}'>今日</text>
+        <text data-stylesjing='1' bindtap='stylesjing' class='{{stylesjing==1?"styjing":""}}'>昨日</text>
+        <text data-stylesjing='2' bindtap='stylesjing' class='{{stylesjing==2?"styjing":""}}'>近7天</text>
+        <text data-stylesjing='3' bindtap='stylesjing' class='{{stylesjing==3?"styjing":""}}'>近30天</text>
+      </view>
+      <view class='shouru'>
+        <text>收入：<text>￥{{shouru}}</text></text>
+        <!-- <image src='../images/right.png'></image> -->
+      </view>
+      <view class='shouru'>
+        <view>
+          <text>销售笔数：<text>￥{{allqitongthreesellCounts}}</text></text>
+          <text>销售金额：<text>￥{{allqitongthreeltotalMoney}}</text></text>
+          <text>销售毛利：<text>￥{{allqitongthreetotalProfits}}</text></text>
+        </view>
+        <image bindtap='l_history' src='../images/right.png'></image>
+      </view>
+    </view>
+
+  </view>
+</view>

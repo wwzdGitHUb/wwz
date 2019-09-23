@@ -1,0 +1,94 @@
+<!--pages/examine/examine.wxml-->
+<text class='top_line'></text>
+<view class='exa_wrap' style='height:{{heights}};'>
+
+
+  <view>
+    <view class='input_wrap'>
+      <input placeholder='请输入查找内容' bindinput="SeachInput" value="{{wxSearchvalue}}"></input>
+      <image class='seach' bindtap='seach' src='../images/seach.png'></image>
+    </view>
+    <scroll-view class='exa_left' style='height:{{heights}};' scroll-y="true" scroll-top="{{scrollTop}}" lower-threshld='10' bindscrolltolower="searchScrollLower">
+
+      <view wx:for='{{lists}}' wx:key='' data-indexs='{{index}}' data-goodsname='{{item.productIDName}}' data-ids='{{item.id}}' class='{{clicks==index?"stys":""}}' bindtap="orderClick">
+        <text>{{item.productIDName}}</text>
+        <image class='{{clicks==index? "crosshairs":"crosshairss"}}' src='../images/crosshairs.png'></image>
+      </view>
+      <text class='zanwu' wx:if='{{noens}}'>暂无数据！</text>
+    </scroll-view>
+  </view>
+  <!-- {{item.billNumber!=""?"huise":""}} {{item.billNumber==""&&item.CGUnitID==cgunitid&&item.ids!=groupindex&&item.CGUnitID!=0?"lvse":""}} {{item.billNumber==""&&item.CGUnitID!=cgunitid&&item.ids!=groupindex&&item.CGUnitID!=0?"zise":""}} {{item.CGUnitID==0?"black":""}} -->
+
+
+  <view>
+    <scroll-view scroll-y="true" class='exa_right' style='height:{{heights}}'>
+      <view class='exa_rightview'>
+        <image bindtap='mark' src='../images/wen.png'></image>
+        <text>库存米数列表</text>
+        <image bindtap='refurbish' src='../images/lodd.png'></image>
+      </view>
+      <view class='views'>
+        <view class='views_view'>小提示：布匹米数下方为布匹备注</view>
+      </view>
+      <view class='tabber'>
+        <view wx:for-items="{{tableList}}" wx:for-index="groupindex" class='{{item.memoInfo==""?"lights":""}} {{item.isCut==1?"ned":""}}' data-ids='{{item.id}}' data-meter='{{item.meter}}' data-productGH='{{item.productGH}}' data-memoInfo='{{item.memoInfo}}' data-rowIndex='{{item.rowIndex}}'
+          bindtap='checkedgoods' wx:key="">
+          <text class='fonts'>{{item.meter}}</text>
+          <text class='beizhu'>{{item.memoInfo}}</text>
+        </view>
+        <view wx:for-items="{{(8-tableList.length%4)}}" wx:key=""></view>
+      </view>
+    </scroll-view>
+    <view class='exa_right_last' bindtap='selected' decode="{{true}}">
+      <text> 查看待售布匹</text>
+    </view>
+  </view>
+</view>
+
+<!--零剪布匹  -->
+<!-- <modal style=' position: relative;' wx:if="{{hiddenmodalput}}" title="零剪布匹" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <text class='titletext'>型号：{{goodsname}}</text>
+  <view class='demand'>
+    需求：
+    <input type='digit' maxlength='10' bindinput="spare"></input>
+  </view>
+</modal> -->
+<!--到货提醒  -->
+<!-- <modal style=' position: relative;' wx:if="{{hiddenmodalremind}}" title="登记到货提醒" confirm-text="确定" cancel-text="取消" bindcancel="cancelremind" bindconfirm="confirmremind">
+  <text class='titletext'>型号：{{goodsname}}</text>
+  <view class='demand'>
+    需求：
+    <input maxlength='50' type='number' bindinput="countP" style='margin-right:10rpx;'></input>匹
+    <input maxlength='50' type='digit' type='digit' bindinput="countM" style='margin-left:10rpx;'></input>米
+  </view>
+</modal> -->
+
+
+<view class='layerwrap' wx:if='{{hiddemsg}}'>
+  <view class='layercount'>
+    <view class='titlelayer'>布匹信息</view>
+    <view class='titletext titletext2'>型号：{{goodsname}}</view>
+    <view class='demand demand2'>
+      <text>数量：</text>
+      <input maxlength='50' bindinput='numlength' type='digit' value='{{mete}}' style='margin-right:10rpx;width:100rpx;'></input>
+      <input maxlength='50' bindinput='marzoni' value='{{marzoni}}' type='digit' style='width:170rpx;'></input>
+      <view class='jian'>
+        <image src='../images/jian.png'></image>
+        <text bindtap='marzoniclick'>零剪</text>
+      </view>
+    </view>
+    <view class='demand'>
+      <text>缸号：</text>
+      <input maxlength='50' bindinput='ghproductGH' type='digit' value='{{productGH}}' style='width:150rpx;'></input>
+    </view>
+    <view class='demand'>
+      <text>备注：</text>
+      <input style='width:430rpx;' bindinput='memoInfo' value='{{memoInfo}}' type='text'></input>
+    </view>
+    <view class='buttalert'>
+      <view bindtap='modification'>修改布匹</view>
+      <view bindtap='batch'>整匹出售</view>
+      <view bindtap='quxiao'>取消</view>
+    </view>
+  </view>
+</view>

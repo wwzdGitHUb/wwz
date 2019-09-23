@@ -1,0 +1,63 @@
+<view class='seach'>
+  <input bindinput="phonedInput" value='{{inputs}}' placeholder='请输入名字/手机号搜索'></input>
+  <text bindtap='seach'>搜索</text>
+</view>
+
+
+
+<view class='hosj'>
+  <view>
+    <picker style='width:100%' value="" bindchange='changes' range="{{category}}">
+      <view class='files'>
+        <text>仓库</text>
+        <image class='down' src='../images/down.png'></image>
+        <text class='valus'>{{category[styles]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view>
+    <picker style='width:100%' value="" bindchange='changestown' range="{{categorytow}}">
+      <view class='files'>
+        <text>产品大类</text>
+        <image class='down' src='../images/down.png'></image>
+        <text class='valus' style='color:#1ea0f7'>{{categorytow[stylestow]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='lables'>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox">
+        <checkbox value="1" checked="{{}}" />显示警报
+      </label>
+    </checkbox-group>
+  </view>
+</view>
+
+<view class='prices'>
+  <text>匹数：<text>{{totalCountP}}</text></text>
+  <text>数量：<text>{{totalCountM}}</text></text>
+  <text>金额：<text>{{totalMoney}}</text></text>
+</view>
+
+<view class='counts'>
+  <text>产品编号</text>
+  <text>库存匹数</text>
+  <text>库存数量</text>
+  <text>米数列表</text>
+</view>
+
+<scroll-view class='scro' scroll-y="true" scroll-top="{{scrollTop}}" lower-threshld='200' bindscrolltolower="searchScrollLower">
+  <view class='list' wx:for='{{items}}' wx:key='' data-productID='{{item.id}}' data-storehouseID='{{item.storehouseID}}' data-parentID='{{item.parentID}}' data-countP='{{item.countP}}' data-productIDName='{{item.productIDName}}' data-countM='{{item.countM}}' bindtap='km_regier'>
+    <view>{{item.productIDName}}</view>
+    <view>{{item.countP}}</view>
+    <view class='col {{item.msg=="缺货"?"colors":""}}'>{{item.countM}}</view>
+    <view>
+      <image src='../images/right.png'></image>
+    </view>
+  </view>
+</scroll-view>
+
+
+<view class='nones' wx:if='{{noens}}'>
+  <text>暂无数据...</text>
+</view>

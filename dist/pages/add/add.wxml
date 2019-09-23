@@ -1,0 +1,116 @@
+<view class='viewwrap'>
+  <scroll-view style='height:{{heights-50}}px' scroll-y="true" lower-threshld='100'>
+    <view class='wrap'>
+      <text class='required'>*</text>
+      <text class='wrapre'>客 户 名 称</text>
+      <input bindinput="phonedInput1" value='{{inputs1}}' placeholder=''></input>
+    </view>
+    <view class='wrap'>
+      <text class='required'>*</text>
+      <text class='wrapre'>所 属 部 门</text>
+      <view class='wrapview'>
+        <picker class='eachwraps' range="{{eachwraps1}}" bindchange='eachwrapsclick'>
+          <view>{{eachwrapsval}}</view>
+          <image class='downs' src='../images/right.png'></image>
+        </picker>
+      </view>
+    </view>
+    <view class='wrap'>
+      <text class='required'>*</text>
+      <text class='wrapre'>所属业务员</text>
+      <view>
+        <picker class='eachwraps' range="{{eachwraps2}}" bindchange='eachwrapsclick2'>
+          <view>{{eachwrapsval2}}</view>
+          <image class='downs' src='../images/right.png'></image>
+        </picker>
+      </view>
+    </view>
+    <view class='wrap'>
+      <text>价 格 分 类</text>
+      <view>
+        <picker class='eachwraps' range="{{eachwraps3}}" bindchange='eachwrapsclick3'>
+          <view>{{eachwrapsval3}}</view>
+          <image class='downs' src='../images/right.png'></image>
+        </picker>
+      </view>
+    </view>
+    <view class='wrap wrap2'>
+      <text>联系人</text>
+      <input style='width:582rpx;' bindinput="phonedInput2" value='{{inputs2}}' placeholder=''></input>
+    </view>
+    <view class='wrap'>
+      <text>手机号</text>
+      <input style='width:582rpx;' bindinput="phonedInput3" value='{{inputs3}}' type='number' placeholder=''></input>
+    </view>
+
+    <view class='wrap wrap2'>
+      <text>省份/城市</text>
+      <view>
+        <picker mode='multiSelector' class='eachwraps' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"  value="{{multiIndex}}" range="{{multiArray}}">
+          <view>{{eachwrapsval4}} {{eachwrapsval5}}</view>
+          <image class='downs' src='../images/right.png'></image>
+        </picker>
+      </view>
+    </view>
+    <!-- <view class='wrap'>
+      <text>城市</text>
+      <view>
+        <picker class='eachwraps' range="{{eachwraps5}}" bindchange='eachwrapsclick5'>
+          <view>{{eachwrapsval5}}</view>
+          <image class='downs' src='../images/right.png'></image>
+        </picker>
+      </view>
+    </view> -->
+
+
+    <view class='wrap'>
+      <text>详细地址</text>
+      <input bindinput="phonedInput4" value='{{inputs4}}' placeholder=''></input>
+    </view>
+
+    <view class='wrap wrap2'>
+      <text>备注信息</text>
+      <input bindinput="phonedInput5" value='{{inputs5}}' placeholder=''></input>
+    </view>
+
+    <!-- <view class='wrap wrap4'>
+      <text>备注信息</text>
+      <textarea bindinput="phonedInput5" value='{{inputs5}}' placeholder=''></textarea>
+    </view> -->
+    <view class='wrap'>
+      <text>电话号码</text>
+      <input bindinput="phonedInput6" value='{{inputs6}}' type='number' placeholder=''></input>
+    </view>
+    <view class='wrap'>
+      <text>传真号码</text>
+      <input bindinput="phonedInput7" value='{{inputs7}}' type='number' placeholder=''></input>
+    </view>
+    <view wx:if='{{moremsg}}'>
+      <view class='wrap'>
+        <text>其他电话1</text>
+        <input bindinput="phonedInput8" value='{{inputs8}}' type='number' placeholder=''></input>
+      </view>
+      <view class='wrap'>
+        <text>其他电话2</text>
+        <input bindinput="phonedInput9" value='{{inputs9}}' type='number' placeholder=''></input>
+      </view>
+      <view class='wrap'>
+        <text>其他电话3</text>
+        <input bindinput="phonedInput10" value='{{inputs10}}' type='number' placeholder=''></input>
+      </view>
+      <view class='wrap'>
+        <text>其他电话4</text>
+        <input bindinput="phonedInput11" value='{{inputs11}}' type='number' placeholder=''></input>
+      </view>
+    </view>
+    <view class='moreall'>
+      <view bindtap='moreall'>
+        <text>{{moremsg==true?"收起":"更多信息"}}</text>
+        <image class='{{moremsg==true?"truesrc":""}}' src='../images/down.png'></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+ <view class='wrapsets'>
+    <view class='sets' bindtap='sets'>保存</view>
+  </view>

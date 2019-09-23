@@ -1,0 +1,20 @@
+/* pages/center/center.wxss */
+page{background: #f0f1f5}
+.headers{display: block;width: 100%; box-sizing: border-box; padding: 110rpx 30rpx; padding-top: 10rpx; background: linear-gradient(to bottom, #1ea0f7 , #f0f1f5);font-size: 30rpx;color: #fff;text-align: center}
+.head{display: block;width: 80%;margin: 0 auto}
+.head image{display:block;width: 140rpx;height: 140rpx; margin: 10rpx auto; box-sizing: border-box;padding: 0rpx;background: #fff;border-radius: 50%;overflow: hidden}
+.head text{display: inline-block;box-sizing: border-box; min-width: 160rpx; padding: 3rpx 20rpx;background: rgba(150, 180, 235, 0.6);border-radius: 50rpx;font-size: 24rpx;}
+.count{display: none;width: 95%;background: #fff;border-radius: 18rpx;padding: 20rpx 0rpx;margin: 0 auto;
+/* display: flex;justify-content: space-around; */
+}
+.count view{display: inline-block; text-align: center;font-size: 32rpx;color: #333333;box-sizing: border-box;border-right: 1rpx solid #eee;}
+.count view:last-child{border: none}
+.count view text{display: block;}
+.count view text:nth-child(2){color: #999999}
+.list{display: block;width: 95%;margin: 20rpx auto;background: #fff; box-sizing: border-box;padding: 0rpx 30rpx; font-size: 28rpx;color: #333333;border-radius:18rpx;}
+.listchilder{display: block;display: flex; align-items: center; justify-content: space-between; box-sizing: border-box; padding: 30rpx 0rpx;border-bottom: 1rpx solid #eee}
+.left_img{display: inline-block;width: 42rpx;margin-right: 10rpx;}
+.right_img{float: right;width: 42rpx;}
+.listchilder view{display: flex;align-items: center;}
+
+.getUserInfos{position: absolute;top: 0rpx;left: 0rpx;background: rgba(0,0,0,0);width: 100%;}

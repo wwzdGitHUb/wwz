@@ -1,0 +1,72 @@
+<view class='wraps' catchtap='q_debt'>
+  <view>
+    <image src='../images/gaikuang.png'></image>
+    <text>资金概况-应收客户欠款：<text >￥{{category}}</text></text>
+  </view>
+  <image src='../images/right.png'></image>
+</view>
+
+
+<view class='wraps wraps3' bindtap='k_regier' style='margin:0;'>
+  <view>
+    <image src='../images/ku.png'></image>
+    <text>库存成本：<text>￥{{totalMoney}}</text></text>
+  </view>
+  <image src='../images/right.png'></image>
+</view>
+
+<view class='wraps wraps2'>
+  <view bindtap='k_regier'>
+    <text>库存总数:<text>{{totalCountM}}</text></text>
+  </view>
+  <view bindtap='k_regier'>
+    <text>库存警报数:<text>{{alertCount}}</text></text>
+  </view>
+</view>
+
+<view class='wraps wraps2'>
+  <view bindtap='l_history'>
+    <image src='../images/x.png'></image>
+    <text>今日销售:<text>￥{{gaitotalMoneys}}</text></text>
+  </view>
+  <view bindtap='l_history'>
+    <image src='../images/z.png'></image>
+    <text>昨日销售:<text>￥{{yestotalMoneys}}</text></text>
+  </view>
+</view>
+
+<view class='wraps wraps4'>
+  <view bindtap='l_history'>
+    <text>近7天销售:<text>￥{{qitianotalMoneys}}</text></text>
+    <view style='width:100%;font-size:26rpx;color:#666'>
+      <image src='../images/t.png'></image>
+      <text>同期:<text>￥{{qitongqilMoneys}}</text></text>
+    </view>
+  </view>
+  <view bindtap='l_history'>
+    <text>近30天销售:<text>￥{{threeotalMoneys}}</text></text>
+    <view style='width:100%;font-size:26rpx;color:#666'>
+      <image src='../images/t.png'></image>
+      <text>同期:<text>￥{{qitongthreelMoneys}}</text></text>
+    </view>
+  </view>
+</view>
+
+<view class='title'>
+  <text data-stylesjing='0' bindtap='stylesjing' class='{{stylesjing==0?"stylesjing":""}}'>今日</text>
+  <text data-stylesjing='1' bindtap='stylesjing' class='{{stylesjing==1?"stylesjing":""}}'>昨日</text>
+  <text data-stylesjing='2' bindtap='stylesjing' class='{{stylesjing==2?"stylesjing":""}}'>近7天</text>
+  <text data-stylesjing='3' bindtap='stylesjing' class='{{stylesjing==3?"stylesjing":""}}'>近30天</text>
+</view>
+<view class='shouru'>
+  <text>收入：<text>￥{{shouru}}</text></text>
+  <!-- <image src='../images/right.png'></image> -->
+</view>
+<view class='shouru'>
+  <view>
+    <text>销售笔数：<text>￥{{allqitongthreesellCounts}}</text></text>
+    <text>销售金额：<text>￥{{allqitongthreeltotalMoney}}</text></text>
+    <text>销售毛利：<text>￥{{allqitongthreetotalProfits}}</text></text>
+  </view>
+  <image bindtap='l_history' src='../images/right.png'></image>
+</view>

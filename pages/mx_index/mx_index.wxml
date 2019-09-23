@@ -1,0 +1,115 @@
+<view class='wrap'>
+  <view class='left' style='height:{{heights}}px'>
+    <view>
+      <text>销\n售</text>
+      <text class='sty'></text>
+    </view>
+    <view bindtap='no_open'>
+      <text>采\n购</text>
+    </view>
+  </view>
+
+  <view style='height:{{heights-20}}px' class='right'>
+    <view class='wrap_data'>
+      <view class='data_wrap'>
+        <view></view>
+        <view>
+          <picker mode="date" value="{{dat1}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange">
+            <view>{{date1}}</view>
+          </picker>
+          <image src='../images/down.png'></image>
+        </view>
+      </view>
+      <view class='cen'>到</view>
+      <view class='data_wrap'>
+        <view></view>
+        <view>
+          <picker mode="date" value="{{date2}}" start="1978-01-01" end="2030-1-23" bindchange="bindDateChange2">
+            <view>{{date2}}</view>
+          </picker>
+          <image src='../images/down.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='title'>
+      <text data-indxs='0' bindtap='styles' class='{{indexs==0?"stys":""}}'>销售单</text>
+      <text data-indxs='1' bindtap='styles' class='{{indexs==1?"stys":""}}'>退货单</text>
+      <text data-indxs='2' bindtap='styles' class='{{indexs==2?"stys":""}}'>收款单</text>
+    </view>
+
+    <view class='seach'>
+      <input bindinput="phonedInput" value='{{inputs}}' placeholder='请输入名字/手机号搜索'></input>
+      <text bindtap='seach'>搜索</text>
+    </view>
+    <view class='shoukuan'>
+      <view data-stylestime='0' bindtap='stylestime' class='{{stylestime==0?"stykehu":""}}'>今天</view>
+      <view data-stylestime='1' bindtap='stylestime' class='{{stylestime==1?"stykehu":""}}'>昨天</view>
+      <view data-stylestime='2' bindtap='stylestime' class='{{stylestime==2?"stykehu":""}}'>近七天</view>
+      <view data-stylestime='3' bindtap='stylestime' class='{{stylestime==3?"stykehu":""}}'>近三十天</view>
+    </view>
+    <view class='heji' wx:if='{{itemstrueflse1}}'>
+      <text>销售笔数：{{allb}}</text>
+      <text>销售额：￥{{totamoney}}</text>
+    </view>
+
+
+    <view class='scrowrap'>
+      <view class='jine' wx:if='{{itemstrueflse3}}'>
+        <text>收款金额：</text>
+        <text>￥{{totalReceivedMoney}}</text>
+      </view>
+      <view class='shoukuan' wx:if='{{itemstrueflse3}}'>
+        <view>日期</view>
+        <view>客户名称</view>
+        <view>收款金额</view>
+        <view>收款账户</view>
+        <view>优惠金额</view>
+      </view>
+      <scroll-view class='scro {{itemstrueflse3==true?"itemstrueflse3":""}}' scroll-y="true" scroll-top="{{scrollTop}}" lower-threshld='200' bindscrolltolower="searchScrollLower">
+
+        <view wx:if='{{itemstrueflse1}}'>
+          <view class='countss' wx:if='{{itemstrueflse1}}' wx:for='{{items}}' wx:key='' data-billNumbers='{{item.billNumber}}' bindtap='gonavs'>
+            <view style='font-size:28rpx;'>姓名：{{item.CGUnitName}}</view>
+            <view class='centers'>
+              <view>
+                <text>{{item.billNumber}}</text>
+              </view>
+              <text class='phones'>金额：￥{{item.actualMoney}}</text>
+              <image src='../images/right.png'></image>
+            </view>
+            <view>{{item.startDate}}</view>
+          </view>
+        </view>
+
+
+        <view wx:if='{{itemstrueflse2}}'>
+          <view >
+               <view class='weikaifang'>暂未开放，敬请期待！</view>
+          </view>
+        </view>
+
+
+        <view wx:if='{{itemstrueflse3}}'>
+          <view class='countss' wx:for='{{items3}}' wx:key=''>
+            <view class='centers'>
+              <text class='phones'>{{item.startDate}}</text>
+              <text class='phones'>{{item.CGUnitName}}</text>
+              <text class='phones'>{{item.totalMoney}}</text>
+              <text class='phones'>{{item.accountName}}</text>
+              <text class='phones'>{{item.cutMoney}}</text>
+            </view>
+          </view>
+        </view>
+
+
+      </scroll-view>
+      <view class='nones' wx:if='{{noens}}'>
+        <text>暂无数据...</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class='newkjxxd' catchtap='cjkj_click'>快捷销售单</view>

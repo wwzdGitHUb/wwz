@@ -1,0 +1,46 @@
+<scroll-view style="height:100vh;" scroll-y='true'>
+<view class='datas'>
+  <text>{{data1}} 至 {{data2}}期间</text>
+</view>
+
+<view class='counts'>
+  <view>
+    <text>客户：{{cgunitname}}</text>
+    <text>手机号：{{mobilephone}}</text>
+  </view>
+  <view>
+    <text>地址：{{address}}</text>
+  </view>
+</view>
+
+<view class='counts'>
+  <view>
+    <text>交易次数：<text>{{countnum}}</text></text>
+    <text>平均交易额：<text>￥{{avgmoney}}</text></text>
+  </view>
+  <view>
+    <text>交易金额：<text>￥{{summoney}}</text></text>
+  </view>
+</view>
+
+
+<view class='counts'>
+  <view>
+    <text>最近交易：{{lastdate}}</text>
+    <text>未交易天数：<text>{{noselldays}}</text></text>
+  </view>
+</view>
+
+<view class='footers'>
+  <view>
+    <text>产品编号</text>
+    <text>销售数量</text>
+    <text>平均售价</text>
+  </view>
+  <view wx:for='{{pronlist}}' wx:key='' class='footerschilder'>
+    <text>{{item.productIDName}}</text>
+    <text>{{item.countM}}</text>
+    <text>{{item.avgPrice}}</text>
+  </view>
+</view>
+</scroll-view>

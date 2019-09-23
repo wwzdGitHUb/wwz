@@ -1,0 +1,27 @@
+<view class='wrap'>
+  <view>客户：{{names}}</view>
+  <view class='dis'>
+    <text>截止：{{times}}</text>
+    <text>手机：{{phos}}</text>
+  </view>
+  <view>
+    <text>欠款：</text>
+    <text class='qian'>￥{{dues}}</text>
+  </view>
+</view>
+
+<view class='title'>
+  <text>日期</text>
+  <text>应收余额</text>
+  <text>类型</text>
+  <text>单据号</text>
+</view>
+
+<scroll-view class='swi'  scroll-y="true" lower-threshld='200' >
+  <view class='counts' wx:for='{{getCustome}}' wx:key=''>
+    <text>{{item.startDate}}</text>
+    <text>￥{{item.dueMoney }}</text>
+    <text>{{item.billType}}</text>
+    <view data-bum='{{item.billNumber}}' bindtap='sell' style='color:#ff5b47'>{{item.billNumber}}</view>
+  </view>
+</scroll-view>

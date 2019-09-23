@@ -1,0 +1,65 @@
+/* pages/examine/examine.wxss */
+page{background: #fff}
+.top_line{ display: inline-block; width: 100%;height: 1rpx;background:#bbbbbb;position: absolute;top: 0rpx}
+.exa_left{ display: inline-block; width: 300rpx;min-height: 500rpx;box-sizing: border-box;border-right: 1rpx solid #ccc;text-align: center;position: relative;padding-bottom: 10rpx;overflow: hidden;padding-top: 81rpx;}
+.exa_right{display: inline-block;width: 450rpx;min-height: 500rpx;float: right;position: relative;box-sizing: border-box;}
+.exa_wrap{display: flex;justify-content: space-around;overflow: hidden}
+.exa_left view{ display: block; width: 100%;height: 80rpx; line-height: 80rpx;font-size: 28rpx;color: #101010; box-sizing: border-box;border-bottom: 1rpx solid #ccc;position: relative;}
+.input_wrap{overflow: hidden;position: fixed; width: 298rpx; top: 1rpx;border-bottom: 1rpx solid #ccc; background: #fff;z-index: 999;}
+.input_wrap input{  width:225rpx; box-sizing: border-box; font-size: 28rpx; color: #101010; padding-left: 18rpx; height: 76rpx;border: none;text-align: center;float: left}
+ .left_img{height: 300rpx; width: 300rpx; position: fixed;left: 0rpx;bottom: 0rpx;border:1rpx solid #ccc;box-sizing: border-box;padding: 5rpx;background: #fff}
+ .left_img view{ display: inline-block;width: 100%;height: 100%;background: #ccc;}
+ .left_img image{display: inline-block;width: 100%;height: 100%;}
+.seach{display: inline-block;width: 50rpx;height: 50rpx;position: absolute;right: 10rpx;top: 16rpx;}
+.exa_rightview{width: 100%;height: 80rpx;line-height: 80rpx;font-size:28rpx;color: #101010;text-align: center; }
+.exa_rightview image{display: inline-block;height: 40rpx; width: 40rpx;position: relative;top: 10rpx}
+.exa_rightview text{margin: 0 10rpx;}
+.exa_right view{display: block; box-sizing: border-box; font-size:28rpx;color: #101010;text-align: center; width: 100%;border-bottom: 1rpx solid #ccc;line-height: 79rpx;}
+.views{box-sizing: border-box;padding: 0 10rpx;}
+.views view{border: none;display: inline-block;width: auto;height: auto}
+.exa_righticon{display: inline-block;width: 32rpx;height: 32rpx;float: left;margin-top: 5rpx;margin-right: 10rpx;}
+.views .ned{box-sizing: border-box;padding: 3rpx 15rpx;border: 1rpx solid #ccc;color: #e51c23;line-height: 42rpx;border-radius: 4px;float: right;position: relative;top: 15rpx;}
+.exa_right .tabber{height: auto;text-align: left;overflow: hidden;border: none}
+.tabber view{display: inline-block;width: 25%; height: 80rpx; box-sizing: border-box;border: 1rpx solid #ccc; margin: 0rpx;float: left;border-left: none;border-top: none;text-align: center;overflow: hidden}
+.exa_right_last{height: 150rpx; box-sizing: border-box; width: 450rpx; position: fixed;border: 0rpx;right: 0rpx;bottom: 0rpx;display: flex;justify-content: space-around;border-top: 1rpx solid #ccc;font-size: 26rpx;color: #101010;align-items: center; }
+.exa_right_last text:nth-child(1){ display: inline-block;  box-sizing: border-box; text-align: center;color: #259b24}
+.exa_right_last text:nth-child(2){ display: inline-block;width: 40%;height: 150rpx;line-height: 40rpx; text-align: center;margin-top: 35rpx; }
+::-webkit-scrollbar {
+ width: 0;
+ height: 0;
+ color: transparent;
+}
+.exa_left .stys{background: #8bc34a; color: #fff}
+.crosshairs{display: inline-block;width: 50rpx;height: 50rpx;position: absolute;margin-top: 15rpx;margin-left: 5rpx;}
+.crosshairss{display: none}
+.left_img view{display: block;}
+.left_img view image{display: inline-block;width: 100%;height: 100%;}
+.titletext,.demand{color: #101010}
+.demand{margin: 0rpx 0rpx;padding: 10rpx 0rpx;display: flex;align-items: center;}
+.demand input{display: inline-block;width: 125rpx; text-align: center; border-bottom:  1rpx solid #ccc;color: rgba(37, 155, 36, 1);}
+.lists_wrap{border: none;height: auto;line-height: normal}
+.tabber .aa{background: saddlebrown;display: none}
+.tabber .bb{background: sandybrown;display: inline-block}
+.lvse{color: #259b24}
+.huise{color:#a8a7a8}
+.black{color: #101010}
+.zise{color: #884898}
+.layerwrap{display: block;width: 100%;height: 100%;background: rgba(0,0,0,0.6);position: absolute;top: 0rpx;left: 0rpx;z-index: 999}
+.layercount{display: block;width: 80%;min-height: 400rpx;margin: 0 auto; line-height: 50rpx; position: relative;top: 25%;background: #fff;border-radius: 10rpx;color: #101010;font-size: 32rpx;box-sizing: border-box;padding: 0rpx 20rpx}
+.titlelayer{text-align: center;box-sizing: border-box;padding: 20rpx 0rpx;}
+.demand2{display: flex;justify-content: space-between;align-items: center;}
+.demand2 input{position: relative;top: 0rpx}
+.titletext2,.demand2{padding: 10rpx 0rpx}
+.jian{color: #e51c23;box-sizing: border-box;padding: 2rpx 10rpx;border:1rpx solid #ddd;border-radius: 10rpx;display: flex; align-items: center; font-size: 30rpx;}
+.jian image{display: inline-block;width: 30rpx;height: 30rpx;margin-right: 5rpx}
+.buttalert{display: flex;justify-content: space-between;font-size: 32rpx;color: #fff;margin:50rpx 0rpx;padding-bottom: 40rpx}
+.buttalert view{display: inline-block;width: 30%;box-sizing: border-box;padding: 10rpx 0rpx;text-align: center;background: #259b24;border-radius: 10rpx}
+.exa_right .views_view{font-size: 24rpx;}
+.beizhu{font-size: 22rpx; box-sizing: border-box;padding: 0 10rpx; font-style: italic; display: block;width: 100%;overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;}
+.exa_right .tabber view{line-height: normal}
+.zanwu{font-size: 26rpx;color: #666;position: relative;top: 100rpx;display: block;text-align: center;}
+.fonts{font-weight: bold;}
+.exa_right .tabber .lights{line-height: 80rpx}
+.exa_right .ned{color: #e51c23;}

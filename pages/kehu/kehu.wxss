@@ -1,0 +1,44 @@
+/* pages/kehu/kehu.wxss */
+/* 搜索样式 */
+page{background: #fff}
+.seach{display: block;box-sizing: border-box;padding: 20rpx 20rpx;display: flex;justify-content: space-around;font-size: 30rpx;color: #fff;background: #1ea0f7;position: fixed;top: 0rpx;left: 0rpx;width: 100%;z-index: 99}
+.seach input{display: inline-block;width: 440rpx;height: 70rpx;color: #333;border-radius: 8rpx;background: #fff;box-sizing: border-box;padding: 2rpx 10rpx;}
+.seach text{display: inline-block;width: 120rpx;line-height: 70rpx;background: #fff;color: #42a841;text-align: center;border-radius: 8rpx;}
+
+
+.wrap{font-size: 28rpx;color: #888;box-sizing: border-box;padding: 20rpx 10rpx; height: 100%; border-bottom: 1rpx solid #ddd;padding-top: 145rpx;background: #fff}
+.wrapview{display: flex;justify-content: space-between; align-items: center; box-sizing: border-box;padding: 4rpx 20rpx;}
+.names{font-size: 34rpx;color: #000;}
+.wrapview image{display: inline-block;width: 38rpx;height: 38rpx;}
+.mes image{display: inline-block;width: 38rpx;height: 38rpx;}
+.i-swipeout-demo-button{height: 100%}
+.i-swipeout-demo-button image{display: inline-block;width: 38rpx;height: 38rpx;}
+.i-swipeout-demo-button-group{display: flex;justify-content: space-around}
+/* .mes image:nth-child(1){margin-right: 30rpx;} */
+.beizhu text{display: inline-block;width: 610rpx;box-sizing: border-box;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+.beizhu image{width: 38rpx;height: 38rpx;}
+.items{border-bottom: 1rpx solid #ddd;box-sizing: border-box;padding: 20rpx 0rpx;width: 100%}
+.nones{display: block;text-align: center;font-size: 26rpx;color: #666;position: absolute; width: 100%;text-align: center; top: 300rpx;}
+.i-swipeout-demo-item{
+  padding: 0rpx 0px;
+}
+.i-swipeout-demo-item{
+  padding: 0px
+}
+.i-swipeout-wrap,.i-swipeout-demo-item{
+  padding: 0px
+}
+.i-swipeout-item{
+  padding: 0px 0px;
+}
+.i-swipeout-demo-button-group{
+  height: 100%
+}
+.i-swipeout-demo-button-group{backface-visibility: #ddd}
+.i-swipeout-demo-button{display: flex;align-items: center;justify-content: space-between}
+.i-swipeout-demo-button image{display: inline-block;width: 66rpx;height: 66rpx;padding: 45rpx;}
+.succ{position: fixed;bottom: 0rpx;width: 100%;padding: 10rpx 0rpx;}
+.succ text{display: block;width: 90%;padding: 20rpx 0rpx;margin: 0 auto;background: #1ea0f7;font-size: 30rpx;color: #fff;border-radius: 80rpx;text-align: center;}
+.displa{display: flex;justify-content: space-between}
+.radio{display: flex;align-items: center;box-sizing: border-box;padding: 0 15rpx}
+.widths{width: 100%}
